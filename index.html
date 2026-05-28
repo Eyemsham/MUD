@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LunoDev | Portfolio of Sinesipho Ngqobe, Web Designer and UI/UX Designer in Cape Town. Creating clean, modern, responsive websites and user-focused digital experiences.">
-  <title>LunoDev</title>
+
+  <meta 
+    name="description" 
+    content="LunoDev | Portfolio of Sinesipho Ngqobe, Web Designer and UI/UX Designer in Cape Town. Creating clean, modern, responsive websites and user-focused digital experiences."
+  >
+
+  <title>LunoDev | Sinesipho Ngqobe</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -71,7 +76,9 @@
       margin-bottom: 1rem;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       color: var(--navy);
       line-height: 1.1;
       letter-spacing: -0.04em;
@@ -169,6 +176,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      position: relative;
     }
 
     .logo {
@@ -176,6 +184,7 @@
       font-weight: 800;
       letter-spacing: -0.04em;
       color: var(--navy);
+      z-index: 1002;
     }
 
     .logo span {
@@ -219,6 +228,7 @@
       border-radius: 999px;
       font-size: 1rem;
       cursor: pointer;
+      z-index: 1002;
     }
 
     /* Hero */
@@ -436,6 +446,7 @@
     .contact-links span {
       color: #E2E8F0;
       font-weight: 600;
+      word-break: break-word;
     }
 
     .contact-links i {
@@ -508,21 +519,34 @@
         padding: 4.2rem 0;
       }
 
+      .nav-inner {
+        justify-content: space-between;
+      }
+
       .menu-toggle {
         display: grid;
         place-items: center;
+        margin-left: auto;
+      }
+
+      nav {
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        z-index: 1001;
       }
 
       nav ul {
-        position: fixed;
-        top: 74px;
-        left: 5%;
-        right: 5%;
         display: none;
+        width: 100%;
         flex-direction: column;
         align-items: stretch;
-        border-radius: 24px;
+        gap: 0.3rem;
         padding: 0.8rem;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 22px;
         box-shadow: var(--shadow);
       }
 
@@ -532,6 +556,7 @@
 
       nav a {
         justify-content: center;
+        padding: 0.9rem 1rem;
       }
 
       .services-grid {
@@ -541,18 +566,41 @@
       .profile-card {
         min-height: 340px;
       }
+
+      .hero {
+        padding-top: 7rem;
+      }
+
+      .btn {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .btn-row {
+        gap: 0.8rem;
+      }
+
+      .btn {
+        padding: 0.9rem 1.2rem;
+      }
+
+      .hero-card {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#home" class="logo">Luno<span>Dev</span></a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
-        <i class="fas fa-bars"></i>
-      </button>
 
       <nav>
         <ul id="navMenu">
@@ -562,19 +610,36 @@
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
   <main>
+
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="section-label"><i class="fas fa-circle"></i> Cape Town based designer</div>
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            Cape Town based designer
+          </div>
+
           <h1>Clean websites with thoughtful user experience.</h1>
-          <p class="lead">I’m Sinesipho Ngqobe, a Web Designer and UI/UX Designer creating modern, responsive, and easy-to-use digital experiences.</p>
+
+          <p class="lead">
+            I’m Sinesipho Ngqobe, a Web Designer and UI/UX Designer creating modern, responsive, and easy-to-use digital experiences.
+          </p>
+
           <div class="btn-row">
-            <a href="#services" class="btn btn-primary">View Services <i class="fas fa-arrow-right"></i></a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            <a href="#services" class="btn btn-primary">
+              View Services <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              Contact Me
+            </a>
           </div>
         </div>
 
@@ -582,7 +647,9 @@
           <div class="profile-card">
             <div>
               <h3>LunoDev</h3>
-              <p>Minimal, modern, and user-focused web design for brands that want a clean online presence.</p>
+              <p>
+                Minimal, modern, and user-focused web design for brands that want a clean online presence.
+              </p>
             </div>
 
             <div class="skill-tags">
@@ -601,11 +668,13 @@
     <section id="about" class="section about">
       <div class="container">
         <span class="section-label">About</span>
+
         <h2>Designing simple digital experiences that feel clear and professional.</h2>
 
         <div class="about-grid">
           <div class="info-box">
             <h3>What I focus on</h3>
+
             <ul>
               <li><i class="fas fa-check"></i>Clean layouts and strong spacing</li>
               <li><i class="fas fa-check"></i>Responsive design for mobile and desktop</li>
@@ -616,8 +685,14 @@
 
           <div class="card">
             <h3>Brand Story</h3>
-            <p>LunoDev creates calm, modern, and functional websites. The brand is built around clarity, good structure, and simple design decisions that make websites easy to understand and use.</p>
-            <p>The goal is to help small businesses, creatives, and growing brands build a professional online presence without making the design feel crowded or confusing.</p>
+
+            <p>
+              LunoDev creates calm, modern, and functional websites. The brand is built around clarity, good structure, and simple design decisions that make websites easy to understand and use.
+            </p>
+
+            <p>
+              The goal is to help small businesses, creatives, and growing brands build a professional online presence without making the design feel crowded or confusing.
+            </p>
           </div>
         </div>
       </div>
@@ -626,13 +701,21 @@
     <section id="services" class="section services">
       <div class="container">
         <span class="section-label">Services</span>
+
         <h2>Focused services for clean and effective digital design.</h2>
 
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+
             <h3>Web Design</h3>
-            <p>Modern, responsive websites designed to look professional, load clearly, and guide users to take action.</p>
+
+            <p>
+              Modern, responsive websites designed to look professional, load clearly, and guide users to take action.
+            </p>
+
             <ul>
               <li>Website layout design</li>
               <li>Responsive pages</li>
@@ -642,9 +725,16 @@
           </div>
 
           <div class="service-card">
-            <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+            <div class="service-icon">
+              <i class="fas fa-pen-nib"></i>
+            </div>
+
             <h3>UI/UX Design</h3>
-            <p>User-focused interface design that makes websites easier to navigate, understand, and enjoy.</p>
+
+            <p>
+              User-focused interface design that makes websites easier to navigate, understand, and enjoy.
+            </p>
+
             <ul>
               <li>Wireframes and page structure</li>
               <li>User-friendly navigation</li>
@@ -659,15 +749,27 @@
     <section id="contact" class="section contact">
       <div class="container">
         <span class="section-label">Contact</span>
+
         <h2>Let’s build something clean and useful.</h2>
-        <p class="lead">Have a website idea, redesign, or UI/UX project? Send a message and let’s talk.</p>
+
+        <p class="lead">
+          Have a website idea, redesign, or UI/UX project? Send a message and let’s talk.
+        </p>
 
         <div class="contact-card">
           <div class="contact-box">
             <h3>Details</h3>
+
             <div class="contact-links">
-              <a href="mailto:sinesiphongqobe@email.com"><i class="fas fa-envelope"></i> Cliqsham@gmail.com</a>
-              <span><i class="fas fa-location-dot"></i> Cape Town, South Africa</span>
+              <a href="mailto:cliqsham@gmail.com">
+                <i class="fas fa-envelope"></i>
+                cliqsham@gmail.com
+              </a>
+
+              <span>
+                <i class="fas fa-location-dot"></i>
+                Cape Town, South Africa
+              </span>
             </div>
           </div>
 
@@ -676,12 +778,16 @@
               <input type="text" placeholder="Your Name" required>
               <input type="email" placeholder="Your Email" required>
               <textarea placeholder="Your Message" required></textarea>
-              <button type="submit" class="btn">Send Message</button>
+
+              <button type="submit" class="btn">
+                Send Message
+              </button>
             </form>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -699,11 +805,25 @@
 
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
+
+      const icon = menuToggle.querySelector('i');
+
+      if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
     });
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
       });
     });
 
@@ -711,8 +831,10 @@
       navbar.classList.toggle('scrolled', window.scrollY > 50);
 
       let current = '';
+
       document.querySelectorAll('section[id]').forEach(section => {
         const sectionTop = section.offsetTop;
+
         if (window.scrollY >= sectionTop - 120) {
           current = section.getAttribute('id');
         }
@@ -720,6 +842,7 @@
 
       navLinks.forEach(link => {
         link.classList.remove('active');
+
         if (link.getAttribute('href') === `#${current}`) {
           link.classList.add('active');
         }
@@ -732,5 +855,6 @@
       contactForm.reset();
     });
   </script>
+
 </body>
 </html>
