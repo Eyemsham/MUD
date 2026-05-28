@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LunoDev | Portfolio of Sinesipho Ngqobe, Web Developer and UI/UX Designer in Cape Town. Creating modern, responsive, and user-focused websites.">
-  <title>LunoDev | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="LunoDev | Portfolio of Sinesipho Ngqobe, Web Designer and UI/UX Designer in Cape Town. Creating clean, modern, responsive websites and user-focused digital experiences.">
+  <title>LunoDev</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
-      --primary: #0A192F;
-      --secondary: #64FFDA;
-      --accent: #EF233C;
-      --light: #F8F8F8;
-      --dark: #0A192F;
-      --text: #333333;
-      --text-light: #6C757D;
+      --navy: #0F172A;
+      --navy-soft: #1E293B;
+      --blue-muted: #64748B;
+      --blue-accent: #3B82F6;
+      --cream: #F8F5F0;
       --white: #FFFFFF;
-      --gradient: linear-gradient(135deg, var(--primary) 0%, #112240 100%);
-      --shadow: 0 5px 15px rgba(10, 25, 47, 0.1);
-      --shadow-hover: 0 10px 25px rgba(10, 25, 47, 0.15);
-      --transition: all 0.3s ease;
-      --border-radius: 8px;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --line: #E5E7EB;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --transition: all 0.25s ease;
     }
 
     * {
@@ -35,106 +36,115 @@
     }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       color: var(--text);
-      background-color: var(--light);
+      background: var(--cream);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2.5rem;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background-color: var(--secondary);
-    }
-
-    h3 {
-      font-size: 1.5rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-
     a {
-      text-decoration: none;
       color: inherit;
-      transition: var(--transition);
+      text-decoration: none;
     }
 
     .container {
-      width: 90%;
-      max-width: 1200px;
+      width: min(90%, 1120px);
       margin: 0 auto;
     }
 
     .section {
-      padding: 5rem 0;
+      padding: 6rem 0;
     }
 
-    .section-center {
-      text-align: center;
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.65);
+      color: var(--blue-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
-    .section-center h2::after {
-      left: 50%;
-      transform: translateX(-50%);
+    h1, h2, h3 {
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      max-width: 950px;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      max-width: 720px;
+      margin-bottom: 1.2rem;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .lead {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 700px;
+      color: var(--blue-muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: var(--secondary);
-      color: var(--primary);
-      border: none;
-      border-radius: var(--border-radius);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 700;
       transition: var(--transition);
-      text-align: center;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
       box-shadow: var(--shadow);
     }
 
-    .btn:hover {
-      background: var(--accent);
-      color: var(--white);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
+    .btn-primary:hover {
+      background: var(--navy-soft);
+      transform: translateY(-2px);
     }
 
-    .btn-outline {
+    .btn-secondary {
       background: transparent;
-      border: 2px solid var(--secondary);
-      color: var(--secondary);
+      color: var(--navy);
+      border-color: rgba(15, 23, 42, 0.18);
     }
 
-    .btn-outline:hover {
-      background: var(--secondary);
-      color: var(--primary);
+    .btn-secondary:hover {
+      background: var(--white);
+      transform: translateY(-2px);
     }
 
     /* Navbar */
@@ -144,808 +154,582 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(248, 248, 248, 0.95);
-      backdrop-filter: blur(10px);
+      padding: 1rem 0;
       transition: var(--transition);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      padding: 1.2rem 0;
     }
 
     .navbar.scrolled {
-      background: rgba(248, 248, 248, 0.98);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(248, 245, 240, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.75);
     }
 
-    .navbar .container {
+    .nav-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
     .logo {
-      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
       font-weight: 800;
-      font-size: 1.8rem;
-      color: var(--primary);
+      letter-spacing: -0.04em;
+      color: var(--navy);
     }
 
-    .navbar nav ul {
+    .logo span {
+      color: var(--blue-accent);
+    }
+
+    nav ul {
       display: flex;
+      align-items: center;
+      gap: 0.4rem;
       list-style: none;
+      padding: 0.35rem;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(229, 231, 235, 0.85);
+      border-radius: 999px;
     }
 
-    .navbar nav li {
-      margin-left: 2rem;
-    }
-
-    .navbar nav a {
-      font-weight: 600;
-      color: var(--primary);
-      position: relative;
-      padding: 5px 0;
-    }
-
-    .navbar nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--secondary);
+    nav a {
+      display: inline-flex;
+      padding: 0.65rem 0.95rem;
+      border-radius: 999px;
+      color: var(--blue-muted);
+      font-size: 0.92rem;
+      font-weight: 700;
       transition: var(--transition);
     }
 
-    .navbar nav a:hover::after,
-    .navbar nav a.active::after {
-      width: 100%;
-    }
-
-    .navbar nav a:hover,
-    .navbar nav a.active {
-      color: var(--secondary);
+    nav a:hover,
+    nav a.active {
+      color: var(--navy);
+      background: var(--cream);
     }
 
     .menu-toggle {
       display: none;
-      background: none;
-      border: none;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--navy);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      font-size: 1rem;
       cursor: pointer;
-      font-size: 1.5rem;
-      color: var(--primary);
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
-      background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), 
-                  url('images/hero.jpg') center/cover no-repeat;
-      color: var(--white);
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
-      text-align: center;
+      padding: 8rem 0 4rem;
       position: relative;
-      overflow: hidden;
     }
 
-    .hero-content {
-      max-width: 800px;
-      padding: 0 2rem;
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(59, 130, 246, 0.14), transparent 28%),
+        radial-gradient(circle at 15% 85%, rgba(15, 23, 42, 0.09), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 32px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      background: var(--navy);
+      border-radius: 26px;
+      padding: 2rem;
+      color: var(--white);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .profile-card::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -90px;
+      top: -90px;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.22);
+    }
+
+    .profile-card h3,
+    .profile-card p {
       position: relative;
       z-index: 1;
     }
 
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s forwards 0.5s;
+    .profile-card h3 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
     }
 
-    .hero h1 span {
-      color: var(--secondary);
+    .profile-card p {
+      color: #CBD5E1;
     }
 
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s forwards 0.8s;
+    .skill-tags {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 2rem;
     }
 
-    .hero .btn {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s forwards 1.1s;
+    .skill-tags span {
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #E2E8F0;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
 
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* About Section */
+    /* About */
     .about {
-      background-color: var(--white);
+      background: var(--white);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-top: 2rem;
     }
 
-    .about-card {
-      background: var(--light);
-      padding: 2.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      border-left: 4px solid var(--secondary);
+    .info-box,
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
     }
 
-    .about-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .about-card h3 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-
-    .about-card ul {
+    .info-box ul {
       list-style: none;
-      margin-left: 0;
-    }
-
-    .about-card li {
-      padding: 0.5rem 0;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .about-card li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--secondary);
-      font-weight: bold;
-    }
-
-    /* Services Section */
-    .services {
-      background-color: var(--light);
-    }
-
-    .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 0.9rem;
+      margin-top: 1rem;
     }
 
-    .service {
-      background: var(--white);
-      padding: 2.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      text-align: center;
-      border-top: 4px solid var(--secondary);
-    }
-
-    .service:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .service h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .service p {
-      color: var(--text-light);
-    }
-
-    /* Projects Section */
-    .projects {
-      background-color: var(--white);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: var(--light);
-      padding: 2.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--secondary);
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .project-card h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .project-card p {
-      color: var(--text-light);
-    }
-
-    /* Brand Guide Section */
-    .brand-guide {
-      background-color: var(--light);
-    }
-
-    .brand-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .brand-card {
-      background: var(--white);
-      padding: 2.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .brand-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .brand-card h3 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--light);
-    }
-
-    .color-palette {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-
-    .color-swatch {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .color-box {
-      width: 80px;
-      height: 80px;
-      border-radius: var(--border-radius);
-      margin-bottom: 0.5rem;
-      box-shadow: var(--shadow);
-    }
-
-    .color-info {
-      font-size: 0.85rem;
-    }
-
-    .color-info p {
-      margin: 0;
+    .info-box li {
+      color: var(--blue-muted);
       font-weight: 600;
     }
 
-    .color-info small {
-      color: var(--text-light);
+    .info-box i {
+      color: var(--blue-accent);
+      margin-right: 0.65rem;
     }
 
-    .typography-sample {
-      margin: 1.5rem 0;
-    }
-
-    .typography-sample h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .typography-sample p {
-      font-family: 'Open Sans', sans-serif;
-      margin-bottom: 0.5rem;
-    }
-
-    .logo-preview {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .logo-example {
-      padding: 1.5rem;
-      background: var(--light);
-      border-radius: var(--border-radius);
-      width: 100%;
-      text-align: center;
-    }
-
-    .logo-dark {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .logo-light {
-      background: var(--white);
-      color: var(--primary);
-      border: 1px solid #ddd;
-    }
-
-    .brand-values {
+    /* Services */
+    .services-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
     }
 
-    .value-item {
-      padding: 1rem;
-      background: var(--light);
-      border-radius: var(--border-radius);
-    }
-
-    .value-item h4 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Contact Section */
-    .contact {
-      background-color: var(--white);
-    }
-
-    .contact .container {
-      max-width: 800px;
-    }
-
-    .contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .contact input,
-    .contact textarea {
-      padding: 14px 16px;
-      border: 1px solid #ddd;
-      border-radius: var(--border-radius);
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1rem;
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
       transition: var(--transition);
     }
 
-    .contact input:focus,
-    .contact textarea:focus {
-      outline: none;
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
     }
 
-    .contact textarea {
-      min-height: 150px;
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #EFF6FF;
+      color: var(--blue-accent);
+      margin-bottom: 1.3rem;
+      font-size: 1.2rem;
+    }
+
+    .service-card ul {
+      margin-top: 1.4rem;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .service-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .contact h2,
+    .contact h3 {
+      color: var(--white);
+    }
+
+    .contact p {
+      color: #CBD5E1;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+      align-items: stretch;
+    }
+
+    .contact-box {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .contact-links a,
+    .contact-links span {
+      color: #E2E8F0;
+      font-weight: 600;
+    }
+
+    .contact-links i {
+      color: #93C5FD;
+      width: 24px;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #94A3B8;
+    }
+
+    textarea {
+      min-height: 130px;
       resize: vertical;
     }
 
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+    form .btn {
+      border: none;
+      cursor: pointer;
+      background: var(--white);
+      color: var(--navy);
     }
 
-    .social p {
-      margin: 0;
-      font-weight: 600;
-    }
-
-    .social a {
-      color: var(--secondary);
-    }
-
-    .social a:hover {
-      color: var(--accent);
-    }
-
-    /* Footer */
     footer {
-      background: var(--primary);
-      color: var(--white);
-      padding: 2rem 0;
+      padding: 1.5rem 0;
+      background: #0B1120;
+      color: #94A3B8;
       text-align: center;
+      font-size: 0.9rem;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.8rem;
-      }
-      
-      h2 {
-        font-size: 2rem;
-      }
-      
-      .menu-toggle {
-        display: block;
-      }
+    footer p {
+      margin: 0;
+      color: #94A3B8;
+    }
 
-      .navbar nav ul {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: var(--white);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 2rem;
-        transition: var(--transition);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .navbar nav ul.active {
-        left: 0;
-      }
-
-      .navbar nav li {
-        margin: 1rem 0;
-      }
-
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .section {
-        padding: 3.5rem 0;
-      }
-
-      .service,
-      .project-card,
-      .about-card,
-      .brand-card {
-        padding: 2rem;
-      }
-
-      .color-palette {
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-card {
         grid-template-columns: 1fr;
       }
+
+      .hero-card {
+        max-width: 560px;
+      }
     }
 
-    @media (max-width: 576px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      .hero h1 {
-        font-size: 2.2rem;
+    @media (max-width: 720px) {
+      .section {
+        padding: 4.2rem 0;
       }
 
-      .hero p {
-        font-size: 1.1rem;
+      .menu-toggle {
+        display: grid;
+        place-items: center;
       }
 
-      .social {
+      nav ul {
+        position: fixed;
+        top: 74px;
+        left: 5%;
+        right: 5%;
+        display: none;
         flex-direction: column;
-        gap: 1rem;
+        align-items: stretch;
+        border-radius: 24px;
+        padding: 0.8rem;
+        box-shadow: var(--shadow);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav a {
+        justify-content: center;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        min-height: 340px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="container">
-      <div class="logo">LunoDev</div>
-      <button class="menu-toggle" id="menuToggle">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Luno<span>Dev</span></a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
         <i class="fas fa-bars"></i>
       </button>
+
       <nav>
         <ul id="navMenu">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#brand-guide" class="nav-link">Brand Guide</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm <span>Sinesipho Ngqobe</span></h1>
-      <p>Web Developer & UI/UX Designer from Cape Town, South Africa.</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2 class="section-center">About LunoDev</h2>
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>Brand Story</h3>
-          <p>LunoDev creates digital experiences that shine like the moon — guiding clients through the digital landscape with clarity, creativity, and functionality. The brand focuses on empowering clients and ensuring their online presence reflects both beauty and purpose.</p>
-        </div>
-        
-        <div class="about-card">
-          <h3>Company Goals</h3>
-          <ul>
-            <li>Deliver functional, visually appealing websites with strong UX</li>
-            <li>Build brand identities clients are proud of</li>
-            <li>Educate clients about branding and design</li>
-            <li>Maintain a friendly, collaborative process</li>
-          </ul>
-        </div>
-        
-        <div class="about-card">
-          <h3>Target Market & USP</h3>
-          <p><strong>Main message:</strong> Modern, minimal, and impactful web solutions for growth.</p>
-          <p><strong>USP:</strong> Combines design and coding expertise.</p>
-          <p><strong>Target audience:</strong> Young entrepreneurs (20–35), creatives, and small businesses needing mobile-friendly and user-focused websites.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="section services">
-    <div class="container">
-      <h2 class="section-center">Services</h2>
-      <div class="service-grid">
-        <div class="service">
-          <h3>Web Design & Development</h3>
-          <p>Responsive and modern websites that reflect your brand identity and purpose.</p>
-        </div>
-        <div class="service">
-          <h3>UI/UX Design</h3>
-          <p>Designing intuitive and accessible user interfaces focused on real user needs.</p>
-        </div>
-        <div class="service">
-          <h3>Branding & Visual Systems</h3>
-          <p>Consistent and creative brand experiences across digital platforms.</p>
-        </div>
-        <div class="service">
-          <h3>SEO & Optimization</h3>
-          <p>Improving visibility and performance for a seamless online experience.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2 class="section-center">Selected Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Apply Point Platform</h3>
-          <p>A student application system for university and accommodation search.</p>
-        </div>
-        <div class="project-card">
-          <h3>LunoDev Branding System</h3>
-          <p>Visual identity and color system designed for the LunoDev brand.</p>
-        </div>
-        <div class="project-card">
-          <h3>CPUT TechFest Campaign</h3>
-          <p>Digital marketing campaign and social media presence for TechFest 2025.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Brand Guide -->
-  <section id="brand-guide" class="section brand-guide">
-    <div class="container">
-      <h2 class="section-center">Brand Guide Preview</h2>
-      <div class="brand-grid">
-        <div class="brand-card">
-          <h3>Color Palette</h3>
-          <div class="color-palette">
-            <div class="color-swatch">
-              <div class="color-box" style="background-color: #0A192F;"></div>
-              <div class="color-info">
-                <p>Primary</p>
-                <small>#0A192F</small>
-              </div>
-            </div>
-            <div class="color-swatch">
-              <div class="color-box" style="background-color: #64FFDA;"></div>
-              <div class="color-info">
-                <p>Secondary</p>
-                <small>#64FFDA</small>
-              </div>
-            </div>
-            <div class="color-swatch">
-              <div class="color-box" style="background-color: #EF233C;"></div>
-              <div class="color-info">
-                <p>Accent</p>
-                <small>#EF233C</small>
-              </div>
-            </div>
-            <div class="color-swatch">
-              <div class="color-box" style="background-color: #F8F8F8; border: 1px solid #ddd;"></div>
-              <div class="color-info">
-                <p>Light</p>
-                <small>#F8F8F8</small>
-              </div>
-            </div>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="section-label"><i class="fas fa-circle"></i> Cape Town based designer</div>
+          <h1>Clean websites with thoughtful user experience.</h1>
+          <p class="lead">I’m Sinesipho Ngqobe, a Web Designer and UI/UX Designer creating modern, responsive, and easy-to-use digital experiences.</p>
+          <div class="btn-row">
+            <a href="#services" class="btn btn-primary">View Services <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
           </div>
         </div>
 
-        <div class="brand-card">
-          <h3>Typography</h3>
-          <div class="typography-sample">
-            <h4>Montserrat</h4>
-            <p>Used for all headings and display text</p>
-            <p style="font-weight: 600;">Font weights: 600, 700, 800</p>
-          </div>
-          <div class="typography-sample">
-            <h4>Open Sans</h4>
-            <p>Used for body text and paragraphs</p>
-            <p style="font-weight: 400;">Font weights: 400, 500, 600</p>
-          </div>
-        </div>
+        <div class="hero-card">
+          <div class="profile-card">
+            <div>
+              <h3>LunoDev</h3>
+              <p>Minimal, modern, and user-focused web design for brands that want a clean online presence.</p>
+            </div>
 
-        <div class="brand-card">
-          <h3>Logo Usage</h3>
-          <div class="logo-preview">
-            <div class="logo-example logo-dark">
-              <h3 style="color: #64FFDA; margin: 0;">LunoDev</h3>
-              <p style="margin: 0; color: #F8F8F8;">Dark background variant</p>
-            </div>
-            <div class="logo-example logo-light">
-              <h3 style="color: #0A192F; margin: 0;">LunoDev</h3>
-              <p style="margin: 0; color: #6C757D;">Light background variant</p>
-            </div>
-          </div>
-          <p class="small-note">Minimum clear space around logo should be equal to the height of the "L" character.</p>
-        </div>
-
-        <div class="brand-card">
-          <h3>Brand Values</h3>
-          <div class="brand-values">
-            <div class="value-item">
-              <h4>Clarity</h4>
-              <p>Creating intuitive, easy-to-navigate digital experiences</p>
-            </div>
-            <div class="value-item">
-              <h4>Creativity</h4>
-              <p>Innovative solutions that stand out while serving purpose</p>
-            </div>
-            <div class="value-item">
-              <h4>Functionality</h4>
-              <p>Beautiful designs that work flawlessly across all devices</p>
+            <div class="skill-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>WordPress</span>
+              <span>UI Design</span>
+              <span>UX Design</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2 class="section-center">Contact Me</h2>
-      <p class="section-center">Let's work together to bring your ideas to life.</p>
-      <form id="contactForm">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-      <div class="social">
-        <p>Email: <a href="mailto:sinesiphongqobe@email.com">sinesiphongqobe@email.com</a></p>
-        <p>Location: Cape Town, South Africa</p>
+    <section id="about" class="section about">
+      <div class="container">
+        <span class="section-label">About</span>
+        <h2>Designing simple digital experiences that feel clear and professional.</h2>
+
+        <div class="about-grid">
+          <div class="info-box">
+            <h3>What I focus on</h3>
+            <ul>
+              <li><i class="fas fa-check"></i>Clean layouts and strong spacing</li>
+              <li><i class="fas fa-check"></i>Responsive design for mobile and desktop</li>
+              <li><i class="fas fa-check"></i>User-friendly page structure</li>
+              <li><i class="fas fa-check"></i>Modern visuals with simple brand colours</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Brand Story</h3>
+            <p>LunoDev creates calm, modern, and functional websites. The brand is built around clarity, good structure, and simple design decisions that make websites easy to understand and use.</p>
+            <p>The goal is to help small businesses, creatives, and growing brands build a professional online presence without making the design feel crowded or confusing.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <section id="services" class="section services">
+      <div class="container">
+        <span class="section-label">Services</span>
+        <h2>Focused services for clean and effective digital design.</h2>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Web Design</h3>
+            <p>Modern, responsive websites designed to look professional, load clearly, and guide users to take action.</p>
+            <ul>
+              <li>Website layout design</li>
+              <li>Responsive pages</li>
+              <li>WordPress design updates</li>
+              <li>HTML, CSS and JavaScript styling</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+            <h3>UI/UX Design</h3>
+            <p>User-focused interface design that makes websites easier to navigate, understand, and enjoy.</p>
+            <ul>
+              <li>Wireframes and page structure</li>
+              <li>User-friendly navigation</li>
+              <li>Clean visual systems</li>
+              <li>Improved usability and flow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <span class="section-label">Contact</span>
+        <h2>Let’s build something clean and useful.</h2>
+        <p class="lead">Have a website idea, redesign, or UI/UX project? Send a message and let’s talk.</p>
+
+        <div class="contact-card">
+          <div class="contact-box">
+            <h3>Details</h3>
+            <div class="contact-links">
+              <a href="mailto:sinesiphongqobe@email.com"><i class="fas fa-envelope"></i> Cliqsham@gmail.com</a>
+              <span><i class="fas fa-location-dot"></i> Cape Town, South Africa</span>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <form id="contactForm">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+              <textarea placeholder="Your Message" required></textarea>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
     <div class="container">
-      <p>© 2025 LunoDev | Designed by Sinesipho Ngqobe</p>
+      <p>© 2026 LunoDev | Designed by Sinesipho Ngqobe</p>
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
-    
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.querySelector('.navbar');
+    const contactForm = document.getElementById('contactForm');
+
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
+
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
       });
     });
-    
-    // Header scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
 
-    // Form submission
-    const contactForm = document.getElementById('contactForm');
-    
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // In a real implementation, you would send the form data to a server
-      // For this example, we'll just show an alert
-      alert('Thank you for your message! I will get back to you soon.');
-      contactForm.reset();
-    });
-
-    // Set active navigation link based on scroll position
     window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-      
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+
       let current = '';
-      sections.forEach(section => {
+      document.querySelectorAll('section[id]').forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - 100) {
+        if (window.scrollY >= sectionTop - 120) {
           current = section.getAttribute('id');
         }
       });
-      
+
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
           link.classList.add('active');
         }
       });
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message. I will get back to you soon.');
+      contactForm.reset();
     });
   </script>
 </body>
